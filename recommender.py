@@ -20,8 +20,8 @@ class recommender:
         self.merged_df = pd.merge(self.userrating,self.movies)
         return self.merged_df
     def createDataMatrix(self):
-        n_movies = len(merged_df['Movies'].unique())
-        n_users = len(merged_df['userid'].unique())
+        n_movies = len(self.merged_df['Movies'].unique())
+        n_users = len(self.merged_df['userid'].unique())
         self.data_matrix = np.zeros((n_users, n_movies))
         
         for line in self.merged_df.itertuples():

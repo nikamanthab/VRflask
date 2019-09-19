@@ -23,8 +23,8 @@ def train():
 
 @app.route('/getResult/',methods = ['POST'])
 def getResult():
-    eqdict = json.loads(request.json)
+    reqdict = json.loads(request.json)
     usertopred = reqdict["usertopred"]
     result = r.getResultFor(usertopred)
     res = json.dumps(result)
-    return result
+    return res
