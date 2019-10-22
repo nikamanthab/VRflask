@@ -1,4 +1,4 @@
-#!/home/mohanpierce99/VRflask/venv/bin/python
+#!/home/mohan/VRflask/venv/bin/python
 
 import sys
 import getopt
