@@ -41,3 +41,4 @@ class recommender:
         print(self.user_similarity[userid])
         return list(self.user_similarity[userid])  
 
+

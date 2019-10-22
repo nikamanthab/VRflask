@@ -5,10 +5,15 @@ from recommender import recommender as rcm
 app = Flask(__name__)
 r = rcm()
 
+@app.route('/getdata',methods = ['POST'])
+def getdata():
+    return "nitin"
+
 @app.route('/train/',methods = ['POST'])
 def train():
-    reqdict = json.loads(request.json)
-
+    print(request.json)
+    reqdict = request.json
+    print(reqdict)
     movievalues = reqdict["movies"]
     userratings = reqdict["userratings"]
     
@@ -23,7 +28,7 @@ def train():
 
 @app.route('/getResult/',methods = ['POST'])
 def getResult():
-    reqdict = json.loads(request.json)
+    reqdict = request.json
     usertopred = reqdict["usertopred"]
     result = r.getResultFor(usertopred)
     res = json.dumps(result)
